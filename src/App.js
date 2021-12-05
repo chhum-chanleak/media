@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+//  components
+import Navbar from "./components/navbar/Navbar";
+import Leftbar from "./components/leftbar/Leftbar";
+import { Grid } from "@material-ui/core";
+import Feed from "./components/feed/Feed";
+import Rightbar from "./components/rightbar/Rightbar";
+import AddButton from "./components/addButton/AddButton";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Grid container>
+        <Grid item sm={2} xs={2}>
+          <Leftbar />
+        </Grid>
+        <Grid item sm={7} xs={10}>
+          <Feed />
+        </Grid>
+        <Grid item sm={3}>
+          <Rightbar />
+        </Grid>
+      </Grid>
+      <AddButton />
     </div>
   );
-}
+};
 
 export default App;
